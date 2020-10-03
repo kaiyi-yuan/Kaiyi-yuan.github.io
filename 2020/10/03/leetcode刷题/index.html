@@ -6,13 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2020/4 | Hexo</title>
+  <title>leetcode刷题 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/archives/2020/04/index.html">
+  <meta name="description" content="[toc] 动态规划题目描述给你一个整数数组 nums ，请你找出数组中乘积最大的连续子数组（该子数组中至少包含一个数字），并返回该子数组所对应的乘积。 提示123输入: [2,3,-2,4]输出: 6解释: 子数组 [2,3] 有最大乘积 6。  解题思路：动态规划   分为max  min。 123456789101112131415161718class Solution &amp;#123;pub">
+<meta property="og:type" content="article">
+<meta property="og:title" content="leetcode刷题">
+<meta property="og:url" content="http://yoursite.com/2020/10/03/leetcode%E5%88%B7%E9%A2%98/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="[toc] 动态规划题目描述给你一个整数数组 nums ，请你找出数组中乘积最大的连续子数组（该子数组中至少包含一个数字），并返回该子数组所对应的乘积。 提示123输入: [2,3,-2,4]输出: 6解释: 子数组 [2,3] 有最大乘积 6。  解题思路：动态规划   分为max  min。 123456789101112131415161718class Solution &amp;#123;pub">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-10-03T11:10:34.159Z">
+<meta property="article:modified_time" content="2020-05-29T03:26:58.205Z">
 <meta property="article:author" content="开一">
 <meta name="twitter:card" content="summary">
   
@@ -157,76 +161,222 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-leetcode刷题" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/04/07/firstblog/" class="archive-article-date">
-  	<time datetime="2020-04-07T03:29:41.688Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-07</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/04/07/firstblog/">nihao</a>
+    <h1 class="article-title" itemprop="name">
+      leetcode刷题
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/04/06/hello-world/" class="archive-article-date">
-  	<time datetime="2020-04-06T13:42:15.608Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-06</time>
+        
+        <a href="/2020/10/03/leetcode%E5%88%B7%E9%A2%98/" class="archive-article-date">
+  	<time datetime="2020-10-03T11:10:34.159Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-03</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/04/06/hello-world/">Is too fun!!</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>[toc]</p>
+<h1 id="动态规划"><a href="#动态规划" class="headerlink" title="动态规划"></a>动态规划</h1><h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>给你一个整数数组 <code>nums</code> ，请你找出数组中乘积最大的连续子数组（该子数组中至少包含一个数字），并返回该子数组所对应的乘积。</p>
+<h4 id="提示"><a href="#提示" class="headerlink" title="提示"></a>提示</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">输入: [2,3,-2,4]</span><br><span class="line">输出: 6</span><br><span class="line">解释: 子数组 [2,3] 有最大乘积 6。</span><br></pre></td></tr></table></figure>
 
-        <div class="article-info info-on-right">
-          
-          
+<p>解题思路：动态规划   分为max  min。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">maxProduct</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> len=nums.<span class="built_in">size</span>();</span><br><span class="line">        <span class="keyword">int</span> max1=INT_MIN,imax=<span class="number">1</span>,imin=<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;len;i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(nums[i]&lt;<span class="number">0</span>)&#123;</span><br><span class="line">                <span class="keyword">int</span> temp=imax;</span><br><span class="line">                imax=imin;</span><br><span class="line">                imin=temp;</span><br><span class="line">            &#125;</span><br><span class="line">            imax=<span class="built_in">max</span>(imax*nums[i],nums[i]);</span><br><span class="line">            imin=<span class="built_in">min</span>(imin*nums[i],nums[i]);</span><br><span class="line">            max1=<span class="built_in">max</span>(imax,max1);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> max1;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
+
+
+<h2 id="题目198-打家劫舍（leetcode）"><a href="#题目198-打家劫舍（leetcode）" class="headerlink" title="题目198. 打家劫舍（leetcode）"></a>题目198. 打家劫舍（leetcode）</h2><h3 id="题目描述-1"><a href="#题目描述-1" class="headerlink" title="题目描述"></a>题目描述</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">你是一个专业的小偷，计划偷窃沿街的房屋。每间房内都藏有一定的现金，影响你偷窃的唯一制约因素就是相邻的房屋装有相互连通的防盗系统，如果两间相邻的房屋在同一晚上被小偷闯入，系统会自动报警。给定一个代表每个房屋存放金额的非负整数数组，计算你 不触动警报装置的情况下 ，一夜之内能够偷窃到的最高金额。</span><br></pre></td></tr></table></figure>
+
+<h4 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">输入: [1,2,3,1]</span><br><span class="line">输出: 4</span><br><span class="line">解释: 偷窃 1 号房屋 (金额 &#x3D; 1) ，然后偷窃 3 号房屋 (金额 &#x3D; 3)。</span><br><span class="line">     偷窃到的最高金额 &#x3D; 1 + 3 &#x3D; 4 。</span><br></pre></td></tr></table></figure>
+
+<h4 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h4><p>利用动态规划求出前面房间金额来判断是否偷当前房间。</p>
+<h4 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">rob</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> len=nums.<span class="built_in">size</span>();</span><br><span class="line">        <span class="keyword">if</span>(len==<span class="number">0</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">if</span>(len==<span class="number">1</span>) <span class="keyword">return</span> nums[<span class="number">0</span>];</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; dp=<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;(len,<span class="number">0</span>); </span><br><span class="line">        dp[<span class="number">0</span>]=nums[<span class="number">0</span>];</span><br><span class="line">        dp[<span class="number">1</span>]=<span class="built_in">max</span>(nums[<span class="number">1</span>],nums[<span class="number">0</span>]);</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">2</span>;i&lt;len;i++)&#123;</span><br><span class="line">            dp[i]+=<span class="built_in">max</span>(dp[i<span class="number">-1</span>],dp[i<span class="number">-2</span>]+nums[i]);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> dp[len<span class="number">-1</span>];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h1 id="二分法"><a href="#二分法" class="headerlink" title="二分法"></a>二分法</h1><h3 id="二分法经典模板"><a href="#二分法经典模板" class="headerlink" title="二分法经典模板"></a>二分法经典模板</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span>(left&lt;=right)&#123;  <span class="comment">//**条件</span></span><br><span class="line">    mid=(left+right)/<span class="number">2</span>;</span><br><span class="line">    <span class="keyword">if</span>(mid&gt;result)&#123;</span><br><span class="line">    	right=mid<span class="number">-1</span>;    </span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span>(mid&lt;result)&#123;</span><br><span class="line">        left=mid+<span class="number">1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">    <span class="keyword">else</span>&#123;				<span class="comment">//相等</span></span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="题目描述-2"><a href="#题目描述-2" class="headerlink" title="题目描述"></a>题目描述</h3><p>传送带上的包裹必须在 D 天内从一个港口运送到另一个港口。</p>
+<p>传送带上的第 i 个包裹的重量为 weights[i]。每一天，我们都会按给出重量的顺序往传送带上装载包裹。我们装载的重量不会超过船的最大运载重量。</p>
+<p>返回能在 D 天内将传送带上的所有包裹送达的船的最低运载能力。</p>
+<h5 id="示例-1"><a href="#示例-1" class="headerlink" title="示例"></a>示例</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">输出：15</span><br><span class="line">解释：</span><br><span class="line">船舶最低载重 15 就能够在 5 天内送达所有包裹，如下所示：</span><br><span class="line">第 1 天：1, 2, 3, 4, 5</span><br><span class="line">第 2 天：6, 7</span><br><span class="line">第 3 天：8</span><br><span class="line">第 4 天：9</span><br><span class="line">第 5 天：10</span><br><span class="line">请注意，货物必须按照给定的顺序装运，因此使用载重能力为 14 的船舶并将包装分成 (2, 3, 4, 5), (1, 6, 7), (8), (9), (10) 是不允许的</span><br></pre></td></tr></table></figure>
+
+<h5 id="本题代码"><a href="#本题代码" class="headerlink" title="本题代码"></a>本题代码</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">shipWithinDays</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; weights, <span class="keyword">int</span> D)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> mid=<span class="number">0</span>,sum=<span class="number">0</span>,<span class="built_in">max</span>=<span class="number">0</span>;</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; v;</span><br><span class="line">        <span class="keyword">int</span> len=weights.<span class="built_in">size</span>();</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;len;i++)&#123;</span><br><span class="line">            sum+=weights[i];</span><br><span class="line">            <span class="keyword">if</span>(<span class="built_in">max</span>&lt;weights[i])&#123;</span><br><span class="line">                <span class="built_in">max</span>=weights[i];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> low=<span class="built_in">max</span>,high=sum;</span><br><span class="line">        <span class="keyword">int</span> days=<span class="number">0</span>,temp=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span>(low&lt;=high)&#123;</span><br><span class="line">            days=<span class="number">0</span>;</span><br><span class="line">            temp=<span class="number">0</span>;</span><br><span class="line">            mid=(low+high)/<span class="number">2</span>;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;len;i++)&#123;<span class="comment">//本题关键计算当前需要天数</span></span><br><span class="line">                temp+=weights[i];</span><br><span class="line">                <span class="keyword">if</span>(temp&gt;mid)&#123;</span><br><span class="line">                    days++;</span><br><span class="line">                    temp=weights[i];</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            days++;</span><br><span class="line">            <span class="keyword">if</span>(days&gt;D)&#123;</span><br><span class="line">                low=mid+<span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span>(days&lt;=D)&#123;</span><br><span class="line">                high=mid<span class="number">-1</span>;</span><br><span class="line">                v.push_back(mid);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> *min_element(v.<span class="built_in">begin</span>(),v.<span class="built_in">end</span>());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h1 id="递归调用"><a href="#递归调用" class="headerlink" title="递归调用"></a>递归调用</h1><p>递归需要找到的条件有：递归边界，递归条件。</p>
+<h3 id="题目描述-3"><a href="#题目描述-3" class="headerlink" title="题目描述"></a>题目描述</h3><p>给定一个非空字符串 <code>s</code>，<strong>最多</strong>删除一个字符。判断是否能成为回文字符串。</p>
+<h5 id="示例-2"><a href="#示例-2" class="headerlink" title="示例"></a>示例</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入: &quot;aba&quot;</span><br><span class="line">输出: True</span><br></pre></td></tr></table></figure>
+
+<h5 id="代码-1"><a href="#代码-1" class="headerlink" title="代码"></a>代码</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">validPalindrome</span><span class="params">(<span class="built_in">string</span> s)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> validPalindrome(s, <span class="number">0</span>, s.<span class="built_in">size</span>()<span class="number">-1</span>, <span class="number">0</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">validPalindrome</span><span class="params">(<span class="built_in">string</span>&amp; s, <span class="keyword">int</span> left, <span class="keyword">int</span> right, <span class="keyword">int</span> count)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (count &gt; <span class="number">1</span>) <span class="keyword">return</span> <span class="literal">false</span>;   <span class="comment">//边界</span></span><br><span class="line">        <span class="keyword">while</span> (left &lt; right) &#123;         <span class="comment">//条件</span></span><br><span class="line">            <span class="keyword">if</span> (s[left] == s[right]) &#123;</span><br><span class="line">                left ++, right --;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="keyword">return</span> validPalindrome(s, left+<span class="number">1</span>, right, count+<span class="number">1</span>) || </span><br><span class="line">                       validPalindrome(s, left, right<span class="number">-1</span>, count+<span class="number">1</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>#双指针解题<br>###题目描述<br>给定一个含有 n 个正整数的数组和一个正整数 s ，找出该数组中满足其和 ≥ s 的长度最小的连续子数组，并返回其长度。如果不存在符合条件的连续子数组，返回 0。<br>####示例</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">输入: s &#x3D; 7, nums &#x3D; [2,3,1,2,4,3]</span><br><span class="line">输出: 2</span><br><span class="line">解释: 子数组 [4,3] 是该条件下的长度最小的连续子数组。</span><br></pre></td></tr></table></figure>
+<p>####思路:</p>
+<p>通过两个指针指向左(x)和右(y)，先移动右端。</p>
+<p>####代码</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">minSubArrayLen</span><span class="params">(<span class="keyword">int</span> s, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> len=INT_MAX;</span><br><span class="line">        <span class="keyword">int</span> x=<span class="number">0</span>,y=x;</span><br><span class="line">        <span class="keyword">int</span> sum=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">bool</span> flag=<span class="literal">true</span>;</span><br><span class="line">        <span class="keyword">if</span>(nums.<span class="built_in">size</span>()==<span class="number">0</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">while</span>(y&lt;=nums.<span class="built_in">size</span>()<span class="number">-1</span>)&#123;</span><br><span class="line">            sum+=nums[y];</span><br><span class="line">            <span class="keyword">if</span>(sum&lt;s)&#123;</span><br><span class="line">                y++;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span>&#123;</span><br><span class="line">                flag=<span class="literal">false</span>;</span><br><span class="line">                <span class="keyword">if</span>(len&gt;y-x+<span class="number">1</span>)&#123;</span><br><span class="line">                    len=y-x+<span class="number">1</span>;</span><br><span class="line">                &#125;</span><br><span class="line">                sum=<span class="number">0</span>;</span><br><span class="line">                x++;</span><br><span class="line">                y=x;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(flag)&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> len;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>#利用栈解题<br>##题目：394. 字符串解码（leetcode）<br>###题目描述</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">给定一个经过编码的字符串，返回它解码后的字符串。</span><br><span class="line">编码规则为: k[encoded_string]，表示其中方括号内部的 encoded_string 正好重复 k 次。注意 k 保证为正整数。</span><br><span class="line">你可以认为输入字符串总是有效的；输入字符串中没有额外的空格，且输入的方括号总是符合格式要求的。</span><br><span class="line">此外，你可以认为原始数据不包含数字，所有的数字只表示重复的次数 k ，例如不会出现像 3a 或 2[4] 的输入。</span><br></pre></td></tr></table></figure>
+<p>####示例</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">s &#x3D; &quot;3[a]2[bc]&quot;, 返回 &quot;aaabcbc&quot;.</span><br><span class="line">s &#x3D; &quot;3[a2[c]]&quot;, 返回 &quot;accaccacc&quot;.</span><br><span class="line">s &#x3D; &quot;2[abc]3[cd]ef&quot;, 返回 &quot;abcabccdcdcdef&quot;.</span><br></pre></td></tr></table></figure>
+<p>####解题思路<br>创建两个栈，分别存放数字，字符串,设置str字符串来记录当前字符串。遍历字符串如果是数字需要先计算当前准确数字大小，如果是字符用str+=s[i]更新当前字符串,如果是’[‘需要将当前数字和str压入相应的栈。如果是”]”那么就需要更新str将[]中的字符解放出来。<br>####代码</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="built_in">string</span> <span class="title">decodeString</span><span class="params">(<span class="built_in">string</span> s)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> len=s.<span class="built_in">size</span>();</span><br><span class="line">        <span class="keyword">if</span>(len==<span class="number">0</span>) <span class="keyword">return</span> s;</span><br><span class="line">        <span class="built_in">string</span> str=<span class="string">""</span>;</span><br><span class="line">        <span class="built_in">stack</span>&lt;<span class="built_in">string</span>&gt; sss;<span class="comment">//创建字符串栈</span></span><br><span class="line">        <span class="built_in">stack</span>&lt;<span class="keyword">int</span>&gt; n;<span class="comment">//创建数字栈</span></span><br><span class="line">        <span class="keyword">int</span> num=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;len;i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(<span class="built_in">isalpha</span>(s[i]))&#123;<span class="comment">//是字符那么更新当前字符串</span></span><br><span class="line">                str+=s[i];</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span>(<span class="built_in">isdigit</span>(s[i]))&#123;<span class="comment">//计算准确的数字</span></span><br><span class="line">                num=num*<span class="number">10</span>+s[i]-<span class="string">'0'</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span>(s[i]==<span class="string">'['</span>)&#123;<span class="comment">//遇到[说明一个子串的开始</span></span><br><span class="line">                sss.push(str);<span class="comment">//更新</span></span><br><span class="line">                n.push(num);</span><br><span class="line">                num=<span class="number">0</span>;</span><br><span class="line">                str=<span class="string">""</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span>(s[i]==<span class="string">']'</span>)&#123;<span class="comment">//一个子串的结束   将子串解放出来</span></span><br><span class="line">                <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n.top();i++)&#123;</span><br><span class="line">                    sss.top()+=str;</span><br><span class="line">                &#125;</span><br><span class="line">                n.pop();</span><br><span class="line">                str=sss.top();</span><br><span class="line">                sss.pop();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> str;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h1 id="用前缀和加哈希表解题"><a href="#用前缀和加哈希表解题" class="headerlink" title="用前缀和加哈希表解题"></a>用前缀和加哈希表解题</h1><h2 id="题目：-974-和可被-K-整除的子数组（leetcode）"><a href="#题目：-974-和可被-K-整除的子数组（leetcode）" class="headerlink" title="题目： 974. 和可被 K 整除的子数组（leetcode）"></a>题目： 974. 和可被 K 整除的子数组（leetcode）</h2><h3 id="题目描述-4"><a href="#题目描述-4" class="headerlink" title="题目描述"></a>题目描述</h3><p>给定一个整数数组 <code>A</code>，返回其中元素之和可被 <code>K</code> 整除的（连续、非空）子数组的数目。</p>
+<h4 id="示例-3"><a href="#示例-3" class="headerlink" title="示例"></a>示例</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">输入：A &#x3D; [4,5,0,-2,-3,1], K &#x3D; 5</span><br><span class="line">输出：7</span><br><span class="line">解释：</span><br><span class="line">有 7 个子数组满足其元素之和可被 K &#x3D; 5 整除：</span><br><span class="line">[4, 5, 0, -2, -3, 1], [5], [5, 0], [5, 0, -2, -3], [0], [0, -2, -3], [-2, -3]</span><br></pre></td></tr></table></figure>
+
+<h4 id="解题思路-1"><a href="#解题思路-1" class="headerlink" title="解题思路"></a>解题思路</h4><p>看到子串的和应该想起前缀和的方式来简化算法，presum(前缀和),sum(当前和) ,mod(前面的余数)  如果有sum%k==mod那么说明这个子串肯定能被k整除,利用哈希表来记录每个mod出现的次数。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">补充：前缀和 为负数 的情况</span><br><span class="line">举例：K &#x3D; 4，求得一个前缀和为 -1 ， -1 % K &#x3D; -1 ，3 % K &#x3D; 3</span><br><span class="line">看似模的结果不相等，一个为 -1 一个为 3 ，但它们应该记到一组</span><br><span class="line">因为它们前缀和之差：3 - (-1) 为 4 。 4 % K &#x3D; 0</span><br><span class="line">所以 mod K 的结果 -1 ，要加上 K ，转成正数的 3</span><br></pre></td></tr></table></figure>
+
+<h4 id="代码-2"><a href="#代码-2" class="headerlink" title="代码"></a>代码</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">subarraysDivByK</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; A, <span class="keyword">int</span> K)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> len=A.<span class="built_in">size</span>();</span><br><span class="line">        <span class="keyword">if</span>(len==<span class="number">0</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> count=<span class="number">0</span>,sum=<span class="number">0</span>;</span><br><span class="line">        <span class="built_in">map</span>&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt; m;</span><br><span class="line">        m[<span class="number">0</span>]=<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;len;i++)&#123;</span><br><span class="line">            sum+=A[i];</span><br><span class="line">            <span class="keyword">int</span> mod=sum%K&lt;<span class="number">0</span>?sum%K+K:sum%K;<span class="comment">//将负数转换成正数</span></span><br><span class="line">            count+=m[mod];</span><br><span class="line">            m[mod]++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> count;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assert/weixin.jpg">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/10/03/leetcode%E5%88%B7%E9%A2%98/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
-  
-  
-    </div></section>
+
   
 
-    
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#动态规划"><span class="toc-number">1.</span> <span class="toc-text">动态规划</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#题目描述"><span class="toc-number">1.0.1.</span> <span class="toc-text">题目描述</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#提示"><span class="toc-number">1.0.1.1.</span> <span class="toc-text">提示</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#题目198-打家劫舍（leetcode）"><span class="toc-number">1.1.</span> <span class="toc-text">题目198. 打家劫舍（leetcode）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#题目描述-1"><span class="toc-number">1.1.1.</span> <span class="toc-text">题目描述</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#示例"><span class="toc-number">1.1.1.1.</span> <span class="toc-text">示例</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#解题思路"><span class="toc-number">1.1.1.2.</span> <span class="toc-text">解题思路</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#代码"><span class="toc-number">1.1.1.3.</span> <span class="toc-text">代码</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#二分法"><span class="toc-number">2.</span> <span class="toc-text">二分法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#二分法经典模板"><span class="toc-number">2.0.1.</span> <span class="toc-text">二分法经典模板</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#题目描述-2"><span class="toc-number">2.0.2.</span> <span class="toc-text">题目描述</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#示例-1"><span class="toc-number">2.0.2.0.1.</span> <span class="toc-text">示例</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#本题代码"><span class="toc-number">2.0.2.0.2.</span> <span class="toc-text">本题代码</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#递归调用"><span class="toc-number">3.</span> <span class="toc-text">递归调用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#题目描述-3"><span class="toc-number">3.0.1.</span> <span class="toc-text">题目描述</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#示例-2"><span class="toc-number">3.0.1.0.1.</span> <span class="toc-text">示例</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#代码-1"><span class="toc-number">3.0.1.0.2.</span> <span class="toc-text">代码</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#用前缀和加哈希表解题"><span class="toc-number">4.</span> <span class="toc-text">用前缀和加哈希表解题</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#题目：-974-和可被-K-整除的子数组（leetcode）"><span class="toc-number">4.1.</span> <span class="toc-text">题目： 974. 和可被 K 整除的子数组（leetcode）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#题目描述-4"><span class="toc-number">4.1.1.</span> <span class="toc-text">题目描述</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#示例-3"><span class="toc-number">4.1.1.1.</span> <span class="toc-text">示例</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#解题思路-1"><span class="toc-number">4.1.1.2.</span> <span class="toc-text">解题思路</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#代码-2"><span class="toc-number">4.1.1.3.</span> <span class="toc-text">代码</span></a></li></ol></li></ol></li></ol></li></ol>
+                    </div>
+                </span>
+            </div>
+        </div>
+        
+    </div>
+</aside>
+
+
+
+  
+  
+  
+
+  
+
+  
+
+  
 
 
           </div>
@@ -249,8 +399,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

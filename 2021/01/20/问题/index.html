@@ -6,15 +6,24 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2020/10 | Hexo</title>
+  <title>问题 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/archives/2020/10/index.html">
+  <meta name="description" content="IDEA中Tomcat启动时出现Artifact ssmBuild:war exploded: Error during artifact deployment. See server log for details.这种问题可能由很多中错误造成。下面提出一种最为常见的错误，希望对大家有帮助。 在idea中由于编译器自生原因可能没有将现在引入jar包加入Structure中。 解决方法，自己创建一">
+<meta property="og:type" content="article">
+<meta property="og:title" content="问题">
+<meta property="og:url" content="http://yoursite.com/2021/01/20/%E9%97%AE%E9%A2%98/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="IDEA中Tomcat启动时出现Artifact ssmBuild:war exploded: Error during artifact deployment. See server log for details.这种问题可能由很多中错误造成。下面提出一种最为常见的错误，希望对大家有帮助。 在idea中由于编译器自生原因可能没有将现在引入jar包加入Structure中。 解决方法，自己创建一">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="c:/Users/yky/AppData/Roaming/Typora/typora-user-images/image-20210120214347669.png">
+<meta property="og:image" content="c:%5CUsers%5Cyky%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20210120214432702.png">
+<meta property="og:image" content="c:/Users/yky/AppData/Roaming/Typora/typora-user-images/image-20210120214900894.png">
+<meta property="og:image" content="c:/Users/yky/AppData/Roaming/Typora/typora-user-images/image-20210120215037393.png">
+<meta property="article:published_time" content="2021-01-20T14:00:32.511Z">
+<meta property="article:modified_time" content="2021-01-20T14:00:06.888Z">
 <meta property="article:author" content="开一">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="c:/Users/yky/AppData/Roaming/Typora/typora-user-images/image-20210120214347669.png">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -157,49 +166,182 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-问题" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/10/03/leetcode%E5%88%B7%E9%A2%98/" class="archive-article-date">
-  	<time datetime="2020-10-03T11:10:34.159Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-03</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/10/03/leetcode%E5%88%B7%E9%A2%98/">leetcode刷题</a>
+    <h1 class="article-title" itemprop="name">
+      问题
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
+        
+        <a href="/2021/01/20/%E9%97%AE%E9%A2%98/" class="archive-article-date">
+  	<time datetime="2021-01-20T14:00:32.511Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-01-20</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="IDEA中Tomcat启动时出现Artifact-ssmBuild-war-exploded-Error-during-artifact-deployment-See-server-log-for-details"><a href="#IDEA中Tomcat启动时出现Artifact-ssmBuild-war-exploded-Error-during-artifact-deployment-See-server-log-for-details" class="headerlink" title="IDEA中Tomcat启动时出现Artifact ssmBuild:war exploded: Error during artifact deployment. See server log for details."></a>IDEA中Tomcat启动时出现Artifact ssmBuild:war exploded: Error during artifact deployment. See server log for details.</h1><p>这种问题可能由很多中错误造成。下面提出一种最为常见的错误，希望对大家有帮助。</p>
+<p>在idea中由于编译器自生原因可能没有将现在引入jar包加入Structure中。</p>
+<p>解决方法，自己创建一个lib包将引入。下面是具体操作步骤：</p>
+<p><img src="C:\Users\yky\AppData\Roaming\Typora\typora-user-images\image-20210120214347669.png" alt="image-20210120214347669" style="zoom: 33%;" /><img src="C:%5CUsers%5Cyky%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20210120214432702.png" alt="image-20210120214432702">!(C:\Users\yky\AppData\Roaming\Typora\typora-user-images\image-20210120214432702.png )</p>
+<img src="C:\Users\yky\AppData\Roaming\Typora\typora-user-images\image-20210120214900894.png" alt="image-20210120214900894" style="zoom: 50%;" />
 
+<img src="C:\Users\yky\AppData\Roaming\Typora\typora-user-images\image-20210120215037393.png" alt="image-20210120215037393" style="zoom:50%;" />
+
+<p>后面直接OK，然后重启tomcat。</p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assert/weixin.jpg">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2021/01/20/%E9%97%AE%E9%A2%98/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/2020/10/03/leetcode%E5%88%B7%E9%A2%98/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">leetcode刷题</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#IDEA中Tomcat启动时出现Artifact-ssmBuild-war-exploded-Error-during-artifact-deployment-See-server-log-for-details"><span class="toc-number">1.</span> <span class="toc-text">IDEA中Tomcat启动时出现Artifact ssmBuild:war exploded: Error during artifact deployment. See server log for details.</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
+        </div>
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -222,8 +364,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
